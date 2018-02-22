@@ -6,8 +6,9 @@
 \usepackage{mathtools}
 \usepackage{tikz-cd}
 
-\newcommand*{\Category}[2]{\Operator{#1}{\mathbf{#2}}}
+\newcommand*{\Category}[2]{\Operator{#1}{#2}}
 \newcommand*{\Operator}[2]{\DeclareMathOperator{#1}{#2}}
+\newcommand*{\OperatorL}[2]{\DeclareMathOperator*{#1}{#2}}
 \newcommand*{\Symbol}[2]{\newcommand*{#1}[0]{#2}}
 \newcommand*{\Pair}[3]{\DeclarePairedDelimiter{#1}{#2}{#3}}
 
@@ -23,8 +24,9 @@
 \Operator{\Spec}{Spec}
 \Operator{\Stab}{Stab}
 \Operator{\tr}{tr}
-\Pair{\Ang}{\langle}{\rangle}
+\Pair{\ang}{\langle}{\rangle}
 \Pair{\norm}{\lVert}{\rVert}
+\Symbol{\tensor}{\otimes}
 \Symbol{\ui}{\hat{\boldsymbol{\imath}}}
 \Symbol{\uj}{\hat{\boldsymbol{\jmath}}}
 \Symbol{\uk}{\hat{\boldsymbol{k}}}
@@ -39,18 +41,22 @@
 
 % Category theory
 
+\OperatorL{\colim}{colim}
 \Operator{\End}{End}
 \Operator{\Hom}{Hom}
 \Operator{\Nat}{Nat}
+\Category{\Set}{Set}
+\Operator{\cod}{cod}
+\Operator{\dom}{dom}
 \Operator{\eval}{eval}
 \Operator{\id}{id}
 \Operator{\inc}{in}
 \Operator{\pr}{pr}
-\Symbol{\colim}{\varinjlim}
 \Symbol{\cotimes}{\amalg}
 \Symbol{\epi}{\twoheadrightarrow}
 \Symbol{\iso}{\cong}
 \Symbol{\mono}{\hookrightarrow}
+\newcommand*{\op}[1]{{#1}^{\mathrm{op}}}
 
 % Logic
 
@@ -66,13 +72,14 @@
 % Set theory
 
 \Operator{\type}{type}
-\Pair{\Mkset}{\{}{\}}
+\Pair{\mkset}{\{}{\}}
 \Symbol{\emp}{\emptyset}
 \Symbol{\power}{\mathcal{P}}
 
 % Topology
 
 \Category{\Top}{Top}
+\Category{\kTop}{kTop}
 \Operator{\Cl}{Cl}
 \Operator{\Ext}{Ext}
 \Operator{\Int}{Int}
@@ -84,6 +91,9 @@
 
 
 % Miscellaneous
+
+\Pair{\paren}{(}{)}
+\newcommand{\Par}[1]{\paren*{#1}}
 
 \Pair{\floor}{\lfloor}{\rfloor}
 
