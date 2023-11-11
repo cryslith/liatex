@@ -1,3 +1,4 @@
+% todo check if these are needed
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
@@ -6,53 +7,31 @@
 \usepackage{mathtools}
 \usepackage{tikz-cd}
 
-\newcommand*{\Category}[2]{\Operator{#1}{#2}}
+% Definitions
+
 \newcommand*{\Operator}[2]{\DeclareMathOperator{#1}{#2}}
+% operator with limits typeset below
 \newcommand*{\OperatorL}[2]{\DeclareMathOperator*{#1}{#2}}
 \newcommand*{\Symbol}[2]{\newcommand*{#1}[0]{#2}}
+% use * with Pair command to automatically insert \left and \right
 \newcommand*{\Pair}[3]{\DeclarePairedDelimiter{#1}{#2}{#3}}
 
 % Algebra
 
-\Category{\Ab}{Ab}
-\Operator{\Char}{char}
-\Operator{\Gal}{Gal}
-\Operator{\Ind}{Ind}
-\Operator{\Rad}{Rad}
-\Operator{\Res}{Res}
-\Operator{\Span}{span}
-\Operator{\Spec}{Spec}
-\Operator{\Stab}{Stab}
-\Operator{\tr}{tr}
-\Pair{\ang}{\langle}{\rangle}
-\Pair{\norm}{\lVert}{\rVert}
 \Symbol{\tensor}{\otimes}
 \Symbol{\ui}{\hat{\boldsymbol{\imath}}}
 \Symbol{\uj}{\hat{\boldsymbol{\jmath}}}
 \Symbol{\uk}{\hat{\boldsymbol{k}}}
-\newcommand*{\conj}[1]{\obar{#1}}
 \newcommand*{\mat}[1]{\begin{bmatrix}#1\end{bmatrix}}
-\newcommand*{\obar}[1]{\overline{#1}}
 \newcommand*{\vect}[1]{\mathbf{#1}}
 
 % Analysis
 
 \Symbol{\weakto}{\rightharpoonup}
 
+
 % Category theory
 
-\OperatorL{\colim}{colim}
-\Operator{\End}{End}
-\Operator{\Hom}{Hom}
-\Operator{\Nat}{Nat}
-\Category{\Set}{Set}
-\Operator{\cod}{cod}
-\Operator{\dom}{dom}
-\Operator{\eval}{eval}
-\Operator{\id}{id}
-\Operator{\inc}{in}
-\Operator{\pr}{pr}
-\Symbol{\cotimes}{\amalg}
 \Symbol{\epi}{\twoheadrightarrow}
 \Symbol{\iso}{\cong}
 \Symbol{\mono}{\hookrightarrow}
@@ -61,49 +40,36 @@
 % Logic
 
 \Symbol{\bto}{\leftrightarrow}
-
-\Symbol{\meet}{\wedge}
-\Symbol{\bigmeet}{\bigwedge}
-\Symbol{\join}{\vee}
-\Symbol{\bigjoin}{\bigvee}
-
 \Symbol{\prv}{\vdash}
 
 % Set theory
 
-\Operator{\type}{type}
 \Pair{\mkset}{\{}{\}}
 \Symbol{\emp}{\varnothing}
 \Symbol{\power}{\mathcal{P}}
 
 % Topology
 
-\Category{\Top}{Top}
-\Category{\hTop}{hTop}
-\Category{\kTop}{kTop}
-\Operator{\Cl}{Cl}
-\Operator{\Ext}{Ext}
-\Operator{\Int}{Int}
-\Operator{\Sin}{Sin}
-\Operator{\Tor}{Tor}
-\Symbol{\Bnd}{\partial}
+\Symbol{\Bnd}{\partial} % boundary
 \Symbol{\Cnt}{\mathcal{C}}
-\Symbol{\I}{[0, 1]}
-\Symbol{\Loop}{\Omega}
-\Symbol{\Sus}{\Sigma}
 \Symbol{\htp}{\simeq}
 
+% Cryptography
+
+\Symbol{\poly}{\mathsf{poly}}
+% todo: sample with $ above arrow
 
 % Miscellaneous
 
 \Pair{\paren}{(}{)}
 \newcommand{\Par}[1]{\paren*{#1}}
 
-\Pair{\floor}{\lfloor}{\rfloor}
+\newcommand*{\obar}[1]{\overline{#1}}
 
-\Operator{\real}{Re}
-\Operator{\imag}{Im}
-\Operator{\Arg}{arg}
+\Pair{\ang}{\langle}{\rangle}
+\Pair{\norm}{\lVert}{\rVert}
+\Pair{\floor}{\lfloor}{\rfloor}
+\Pair{\ceil}{\lceil}{\rceil}
 
 \Symbol{\C}{\mathbb{C}}
 \Symbol{\F}{\mathbb{F}}
@@ -113,16 +79,16 @@
 \Symbol{\R}{\mathbb{R}}
 \Symbol{\Z}{\mathbb{Z}}
 
-\Symbol{\idot}{\bullet}
-
-\Symbol{\slt}{\sqsubset}
-\Symbol{\sle}{\sqsubseteq}
+\Symbol{\bin}{\{0, 1\}}
+\Symbol{\I}{[0, 1]}
 
 \newtheorem*{theorem}{Theorem}
-\newtheorem*{lemma}{Lemma}
-\newtheorem*{problem}{Problem}
-\newtheorem*{prop}{Proposition}
-\newtheorem*{solution}{Solution}
-\newtheorem*{subproblem}{Subproblem}
+\newtheorem*{lemma}[theorem]{Lemma}
+\newtheorem*{prop}[theorem]{Proposition}
+\newtheorem*{claim}[theorem]{Claim}
+\newtheorem*{fact}[theorem]{Fact}
 
 \renewcommand{\phi}{\varphi}
+
+\def\[#1\]{\begin{align*}#1\end{align*}}
+\newcommand*{\pheq}[0]{\mathrel{\phantom{=}}} % invisible = for align mode
