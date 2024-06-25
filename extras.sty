@@ -1,0 +1,54 @@
+% algorithms
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+% \renewcommand{\thealgorithm}{} % disable algorithm numbering
+
+% todo tikz stuff
+\usepackage{tikz-cd}
+
+% operator: \DeclareMathOperator{#1}{#2}
+% operator with limits typeset below: \DeclareMathOperator*
+% pairs: \DeclarePairedDelimiter
+% use * with \DeclarePairedDelimiter command to automatically insert \left and \right
+
+% Algebra
+
+\newcommand*{\ui}{\hat{\boldsymbol{\imath}}}
+\newcommand*{\uj}{\hat{\boldsymbol{\jmath}}}
+\newcommand*{\uk}{\hat{\boldsymbol{k}}}
+\newcommand*{\vect}[1]{\mathbf{#1}}
+
+% Analysis
+
+\newcommand*{\weakto}{\rightharpoonup}
+
+% Category theory
+
+\newcommand*{\epi}{\twoheadrightarrow}
+\newcommand*{\iso}{\cong}
+\newcommand*{\mono}{\hookrightarrow}
+\newcommand*{\op}[1]{{#1}^{\mathrm{op}}}
+
+% Logic
+
+\newcommand*{\prv}{\vdash}
+
+% Set theory
+
+\DeclarePairedDelimiter{\mkset}{\{}{\}}
+
+% Topology
+
+\newcommand*{\Bnd}{\partial} % boundary
+\newcommand*{\Cnt}{\mathcal{C}}
+\newcommand*{\htp}{\simeq}
+
+% Cryptography
+
+\newcommand{\sample}{\mathbin{\gets\!\!{\scriptstyle \$}}}
+
+% Miscellaneous
+
+\DeclarePairedDelimiter{\ang}{\langle}{\rangle}
+
+\DeclareRobustCommand{\stirling}{\genfrac\{\}{0pt}{}}
