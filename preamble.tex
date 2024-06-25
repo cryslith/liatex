@@ -3,7 +3,6 @@
 \usepackage{latexsym}
 \usepackage{gensymb}
 \usepackage{mathtools}
-\usepackage[noabbrev,capitalise]{cleveref}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}
@@ -11,6 +10,7 @@
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{definition}[theorem]{Definition}
+\newtheorem{claim}[theorem]{Claim}
 
 % nice fonts
 \usepackage{libertine}
@@ -21,6 +21,7 @@
 % nice links
 \usepackage{xcolor}
 \usepackage[colorlinks, linkcolor=purple, citecolor=blue!75!black, urlcolor=purple]{hyperref}
+\usepackage[noabbrev,capitalise]{cleveref}
 
 \makeatletter
 % superimpose two math symbols
@@ -35,7 +36,7 @@
 \newcommand*{\tensor}{\otimes}
 \newcommand*{\mat}[1]{\begin{bmatrix}#1\end{bmatrix}}
 \newcommand*{\tp}[0]{\mathsf{T}}
-\newcommand*{\bto}{\leftrightarrow}
+\renewcommand*{\iff}[0]{\leftrightarrow}
 \renewcommand*{\emptyset}[0]{\varnothing}
 \newcommand{\dotcup}[0]{\mathbin{\mathpalette\superimpose{{\cdot}{\cup}}}}
 \DeclareMathOperator*{\bigdotcup}{\mathpalette\superimpose{{\cdot}{\bigcup}}}
