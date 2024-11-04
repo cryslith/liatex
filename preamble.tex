@@ -6,6 +6,8 @@
 
 \usepackage{amsthm}
 
+\usepackage{tikz}
+
 % nice fonts
 \usepackage{libertine}
 \usepackage[libertine,vvarbb]{newtxmath}
@@ -14,6 +16,10 @@
 
 % spaces between paragraphs instead of indent
 \usepackage{parskip}
+% avoid adding the extra space around proofs
+\usepackage{etoolbox}
+\AtBeginEnvironment{proof}{\vspace*{-\parskip}}
+\AtEndEnvironment{proof}{\vspace*{-\parskip}}
 
 % nice links
 \usepackage{xcolor}
