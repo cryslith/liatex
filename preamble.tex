@@ -18,8 +18,8 @@
 \usepackage{parskip}
 % avoid adding the extra space around proofs
 \usepackage{etoolbox}
-\AtBeginEnvironment{proof}{\vspace*{-\parskip}}
-\AtEndEnvironment{proof}{\vspace*{-\parskip}}
+\BeforeBeginEnvironment{proof}{\vspace*{-\parskip}}
+\AfterEndEnvironment{proof}{\vspace*{-\parskip}}
 
 % nice links
 \usepackage{xcolor}
