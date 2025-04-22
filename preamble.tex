@@ -24,17 +24,24 @@
 % nice links
 \usepackage{xcolor}
 \usepackage[colorlinks, linkcolor=purple, citecolor=blue!75!black, urlcolor=purple]{hyperref}
-\usepackage[noabbrev,capitalise]{cleveref}
 
-% has to be after cleveref
+% replacement for cleveref
+\usepackage{zref-clever}
+\zcsetup{cap=true}
+\newcommand{\cref}[1]{\zcref{#1}}
+
 \newtheorem{theorem}{Theorem}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{fact}[theorem]{Fact}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{definition}[theorem]{Definition}
-\newtheorem{claim}[theorem]{Claim}
-\newtheorem{example}[theorem]{Example}
+\newcommand{\mkthm}[2]{%
+  \newtheorem{#1}[theorem]{#2}%
+  \AddToHook{env/#1/begin}{\zcsetup{countertype={theorem=#1}}}%
+}
+\mkthm{lemma}{Lemma}
+\mkthm{fact}{Fact}
+\mkthm{proposition}{Proposition}
+\mkthm{corollary}{Corollary}
+\mkthm{definition}{Definition}
+\mkthm{claim}{Claim}
+\mkthm{example}{Example}
 
 % left margin notes
 \usepackage{marginnote}
