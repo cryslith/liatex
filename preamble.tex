@@ -3,6 +3,7 @@
 \usepackage{latexsym}
 \usepackage{gensymb}
 \usepackage{mathtools}
+\usepackage{xifthen}
 
 \usepackage{amsthm}
 
@@ -47,6 +48,8 @@
 \usepackage{marginnote}
 \reversemarginpar
 \renewcommand*{\marginfont}{\scriptsize\sffamily}
+
+\newcommand{\xxx}[1]{{\normalmarginpar\marginnote{\textcolor{red}{\large xxx}}} \textbf{[xxx }{#1}\textbf{]}}
 
 \makeatletter
 % superimpose two math symbols
@@ -97,3 +100,5 @@
       \draw (0, 0) -- (1, {-sqrt(3)}) -- (-1, {-sqrt(3)}) -- cycle;
       \node[anchor=base,inner sep=0pt] (e) at (0, -5) {$=$};
 \end{tikzpicture}}}
+
+\newcommand{\hidden}[3][]{\ifthenelse{\isempty{#1}}{\emph{{#2} hidden.}}{#3}}
