@@ -37,12 +37,14 @@
   \AddToHook{env/#1/begin}{\zcsetup{countertype={theorem=#1}}}%
 }
 \mkthm{lemma}{Lemma}
-\mkthm{fact}{Fact}
 \mkthm{proposition}{Proposition}
 \mkthm{corollary}{Corollary}
+\theoremstyle{definition}
 \mkthm{definition}{Definition}
-\mkthm{claim}{Claim}
 \mkthm{example}{Example}
+\theoremstyle{remark}
+\mkthm{fact}{Fact}
+\mkthm{claim}{Claim}
 
 % left margin notes
 \usepackage{marginnote}
