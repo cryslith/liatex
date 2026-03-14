@@ -4,6 +4,8 @@
 \usepackage{gensymb}
 \usepackage{mathtools}
 \usepackage{xifthen}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
 
 \usepackage{amsthm}
 
@@ -23,7 +25,6 @@
 \AfterEndEnvironment{proof}{\vspace*{-\parskip}}
 
 % nice links
-\usepackage{xcolor}
 \usepackage[colorlinks, linkcolor=purple, citecolor=blue!75!black, urlcolor=purple]{hyperref}
 
 % replacement for cleveref
@@ -35,14 +36,30 @@
 \newcommand{\mkthm}[2]{%
   \newtheorem{#1}[theorem]{#2}%
   \AddToHook{env/#1/begin}{\zcsetup{countertype={theorem=#1}}}%
+  \newtcolorbox[use counter=theorem]{#1box}[2][]{
+    label type=theorem,
+    title=\textbf{#2~\thetcbcounter}\ifthenelse{\isempty{##2}}{}{ ({##2})}\textbf{.},
+    colback=WildStrawberry!5,
+    colframe=WildStrawberry!30,
+    coltitle=black,
+    ##1
+  }%
+  \newtheorem*{#1*}{#2}%
+  \newtcolorbox{#1boxun}[2][]{
+    title=\textbf{#2}\ifthenelse{\isempty{##2}}{}{ ({##2})}\textbf{.},
+    colback=WildStrawberry!5,
+    colframe=WildStrawberry!30,
+    coltitle=black,
+    ##1
+  }
 }
+
 \mkthm{lemma}{Lemma}
 \mkthm{proposition}{Proposition}
 \mkthm{corollary}{Corollary}
 \theoremstyle{definition}
 \mkthm{definition}{Definition}
 \mkthm{example}{Example}
-\theoremstyle{remark}
 \mkthm{remark}{Remark}
 \mkthm{fact}{Fact}
 \mkthm{claim}{Claim}
