@@ -32,12 +32,13 @@
 \zcsetup{cap=true}
 \newcommand{\cref}[1]{\zcref{#1}}
 
-\newtheorem{theorem}{Theorem}
+\newcounter{theorem}
+
 \newcommand{\mkthm}[2]{%
   \newtheorem{#1}[theorem]{#2}%
   \AddToHook{env/#1/begin}{\zcsetup{countertype={theorem=#1}}}%
   \newtcolorbox[use counter=theorem]{#1box}[2][]{
-    label type=theorem,
+    label type=#1,
     title=\textbf{#2~\thetcbcounter}\ifthenelse{\isempty{##2}}{}{ ({##2})}\textbf{.},
     colback=WildStrawberry!5,
     colframe=WildStrawberry!30,
@@ -54,6 +55,7 @@
   }
 }
 
+\mkthm{theorem}{Theorem}
 \mkthm{lemma}{Lemma}
 \mkthm{proposition}{Proposition}
 \mkthm{corollary}{Corollary}
